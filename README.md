@@ -29,4 +29,4 @@ If you find a bug email me jimram@me.com or fork it!
 
 ##### Improve it.
 
-Help me to make it simpler, more semantic and more stable.
+Help make it simpler, more semantic and more stable.
