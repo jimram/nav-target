@@ -1,0 +1,239 @@
+/*=======================================
+	Nav-Style.css
+=========================================
+
+Project	:	nav:target
+Source	:	https://github.com/jimram/nav-target
+Author	:	Jim Ramsden
+URL		:	jimramsden.com
+
+
+Contents:
+
+	- Housekeeping
+	- Nav Container
+	- Menu List
+	- Triggers
+	- Breakpoints
+	- Helpers
+
+=========================================
+	Housekeeping
+=======================================*/
+
+html {
+	background:#F8f8f8;
+}
+
+body {
+	margin:0 auto;
+	padding:2em;
+	max-width:45em;
+	line-height:1.5;
+	font-family: sans-serif;
+	color:#333;
+}
+
+header, main, footer {
+	padding:1em 0;
+	display:block;
+}
+
+a {
+	color:#c66;
+	text-decoration: none;
+}
+
+
+[role="banner"] h1 {
+	font-size:2.8em;
+	font-weight:700;
+}
+
+[role="banner"] h2 {
+	font-size:1.8em;
+	font-weight:400;
+}
+
+hr {
+	border:0.1em solid #333;
+	border-radius:0.2em;
+}
+
+/*=======================================
+	Nav Container 
+=======================================*/
+
+/* Default state */
+
+#main-nav {
+	padding:2em 0;
+	position: static;
+	top:-100%; /* this is how far the nav slides in from */
+    -webkit-transition:top .5s cubic-bezier(.10, .10, .25, .90);  
+    -moz-transition:top .5s cubic-bezier(.10, .10, .25, .90);  
+    -o-transition:top .5s cubic-bezier(.10, .10, .25, .90);  
+    transition:top .5s cubic-bezier(.10, .10, .25, .90); 
+}
+
+
+/* Triggered state */
+
+#main-nav:target {
+	position: absolute; /* use absolute of fixed - if you have a small/short menu */
+	top:0;
+	left:0;
+	right:0;
+	padding:2em;
+	background:#fff;
+	border-bottom:1px solid #e2e2e2;
+}
+
+
+/*=======================================
+	Menu list
+=======================================*/
+
+.menu {
+	margin:0 auto;
+	max-width:45em;
+	list-style:none;
+	padding:0;
+	border-bottom:1px solid #ddd;
+}
+
+.menu li {
+	border-top:1px solid #ddd;
+}
+
+.menu li a {
+	font-weight:bold;
+	display:block;
+	padding:0.5em 0;
+}
+
+	.menu a:hover,
+	.menu a:focus {
+		background:#fff;
+	}
+
+	#main-nav:target .menu a:hover,
+	#main-nav:target .menu a:focus {
+		background: #F9F9F9;
+	}
+
+	.menu a:focus:after {
+		content: " [" attr(accesskey) "] ";
+		font-weight:normal;
+	}
+
+	.menu a:hover:after {
+		display: none;
+	}
+
+.menu:before {
+	content:""attr(data-menuTitle)"";
+	padding:0.5em 0;
+	display:block;
+	font-weight:bold;
+}
+
+/*=======================================
+	Triggers
+=======================================*/
+
+.jump-link {
+	position: absolute;
+	top:0em;
+	left:0em;
+	width:2em;
+	height:2em;
+	display:block;
+	text-align:center;
+	line-height:2em;
+	background:#333;
+	color:#fff;
+}
+
+	.jump-link:hover,
+	.jump-link:focus {
+		background:#c66;
+		text-decoration:none;
+	}
+
+	.jump-link:after {
+		position:absolute;
+		margin-left:2em;
+		top:0;
+		color:#c66;
+		background:#fff;
+		padding:0 0.5em;
+		display: block;
+	}
+
+	.jump-link:hover:after {
+		display: none;
+	}
+
+#nav-open:before {
+	content:'\2630'; /* Hamburger symbol */
+}
+
+	#nav-open:focus:after {
+		content:'menu';
+	}
+
+#nav-close:before {
+	content:'\2a2f'; /* Multiply symbol */
+}
+
+	#nav-close:focus:after {
+		content:'close';
+	}
+
+#nav-close {
+	display: none; /* hides close button until menu is triggered */
+}
+
+#main-nav:target #nav-close {
+	display: block;
+}
+
+/*=======================================
+	Breakpoints
+=======================================*/
+
+@media only screen and (min-width:35em) {
+
+	html {
+		font-size:16px; 
+	}
+}
+
+@media only screen and (min-width:40em) {
+	
+	html {
+		font-size:18px; 
+	}
+}
+
+@media only screen and (min-width:45em) {
+	
+	html {
+		font-size:20px; 
+	}
+}
+
+
+/*=======================================
+	Helpers
+=======================================*/
+
+.vishid {
+	width:1px;
+	height:1px;
+	overflow:hidden;
+	position: absolute;
+}
+
+
