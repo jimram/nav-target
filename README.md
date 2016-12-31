@@ -1,9 +1,8 @@
 # nav:target
 
-### Simple, Semantic, Script free, Accessible Navigation pattern.
+## Simple, Semantic, Script free, Accessible Navigation pattern.
 
-
-#### Structure
+### Structure
 
 The navigation sits at the bottom of your document with an id of "#main-naviagtion". 
 
@@ -15,14 +14,9 @@ Within the navigation element there's another 'jump to link' - this one has a bl
 
 Simples.
 
-
-#### Support
-
-##### Browsers
+#### Browser support
 Works perfectly in all modern browsers and IE9+.
 
 In browsers that don't support :target or css transitions it degrades to a simple jump menu.
 
-##### Improve it.
-
-Help make it simpler, more semantic and more stable.
+[View Demo](demo/index.html)
