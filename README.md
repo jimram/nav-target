@@ -23,10 +23,6 @@ Works perfectly in all modern browsers and IE9+.
 
 In browsers that don't support :target or css transitions it degrades to a simple jump menu.
 
-##### Bugs
-
-If you find a bug email me jimram@me.com or fork it!
-
 ##### Improve it.
 
 Help make it simpler, more semantic and more stable.
